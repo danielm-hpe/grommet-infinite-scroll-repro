@@ -1,0 +1,23 @@
+{
+  "name": "infinite-scroll-repro",
+  "version": "1.0.0",
+  "description": "template for grommet v2",
+  "keywords": [],
+  "type": "module",
+  "dependencies": {
+    "grommet": "2.50.0",
+    "grommet-icons": "4.12.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "styled-components": "5.3.9"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.0.4",
+    "vite": "^7.1.9"
+  },
+  "scripts": {
+    "start": "vite"
+  }
+}
