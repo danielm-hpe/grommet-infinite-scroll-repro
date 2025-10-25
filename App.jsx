@@ -1,5 +1,8 @@
 import { useMemo, useState } from "react";
-import { grommet, Box, Grommet, DataTable, Layer, List, Text, Accordion, AccordionPanel, Button } from "grommet";
+import {
+  grommet, Box, Grommet, DataTable, Layer,
+  Grid, List, Text, Accordion, AccordionPanel, Button
+} from "grommet";
 
 const MAX_ITEMS = 200;
 
@@ -13,10 +16,10 @@ const ExampleList = ({ data }) => (
   </List>
 );
 
-const ExampleDataTable = ({ data }) => (
+const ExampleDataTable = ({ data, ...rest }) => (
   <DataTable data={data} columns={[
     { property: 'value', header: 'Value' },
-  ]} />
+  ]} {...rest} />
 );
 
 const ExampleAccordion = ({ data }) => (
@@ -50,6 +53,7 @@ function App() {
     <Grommet theme={grommet}>
       <Box gap="medium">
         <Button label="Open Layer" onClick={() => setIsOpen(true)} />
+        <Text>Examples of infinite scroll working properly in accordion</Text>
         <ExampleAccordion data={data} />
       </Box>
       {isOpen && (
@@ -60,6 +64,7 @@ function App() {
           onEsc={() => closeLayer()}
         >
           <Box height="medium" gap="medium" overflow="auto" flex="grow">
+            <Text>Examples of infinite scroll not working in an accordion in a layer</Text>
             <Button label="Close" onClick={() => closeLayer()} />
             <ExampleAccordion data={data} />
           </Box>
